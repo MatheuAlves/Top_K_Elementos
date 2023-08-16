@@ -19,17 +19,15 @@ O código aceita quantos arquivos o usuário quiser, desde que estejam nesse pad
 
 A biblioteca unordered_map em C++ foi utilizada para montar a hash, aqui estão algumas características dessa biblioteca:
 
-Tabela Hash Interna: O unordered_map mantém uma tabela hash interna para armazenar os elementos.
++ Função Hash: Cada chave é passada por uma função hash, que gera um valor inteiro chamado hash code. Esse valor é usado para determinar onde o par chave-valor será armazenado na tabela interna.
 
-Função Hash: Cada chave é passada por uma função hash, que gera um valor inteiro chamado hash code. Esse valor é usado para determinar onde o par chave-valor será armazenado na tabela interna.
++ Resolução de Colisões: Quando dois ou mais pares de chaves diferentes produzem o mesmo valor hash (colisão), eles são armazenados na mesma posição da tabela hash, mas em uma lista ligada. Isso cria uma "cadeia" de elementos com o mesmo valor hash.
 
-Resolução de Colisões: Quando dois ou mais pares de chaves diferentes produzem o mesmo valor hash (colisão), eles são armazenados na mesma posição da tabela hash, mas em uma lista ligada. Isso cria uma "cadeia" de elementos com o mesmo valor hash.
++ Busca e Inserção: Ao buscar um elemento, a função hash é usada para encontrar a posição na tabela interna. Em seguida, a lista ligada nessa posição é percorrida para procurar a chave desejada. Ao inserir um elemento, a mesma abordagem é usada: a posição na tabela é encontrada usando a função hash e, se já houver elementos nessa posição, o novo par chave-valor é adicionado à lista ligada.
 
-Busca e Inserção: Ao buscar um elemento, a função hash é usada para encontrar a posição na tabela interna. Em seguida, a lista ligada nessa posição é percorrida para procurar a chave desejada. Ao inserir um elemento, a mesma abordagem é usada: a posição na tabela é encontrada usando a função hash e, se já houver elementos nessa posição, o novo par chave-valor é adicionado à lista ligada.
++ Complexidade Amortizada: Embora as operações individuais possam ter complexidade O(n) no pior caso (onde n é o número de elementos na lista ligada), a complexidade amortizada de busca, inserção e remoção em média ainda é O(1), devido à distribuição uniforme das chaves e ao redimensionamento automático da tabela interna.
 
-Complexidade Amortizada: Embora as operações individuais possam ter complexidade O(n) no pior caso (onde n é o número de elementos na lista ligada), a complexidade amortizada de busca, inserção e remoção em média ainda é O(1), devido à distribuição uniforme das chaves e ao redimensionamento automático da tabela interna.
-
-Redimensionamento: À medida que o número de elementos aumenta, o unordered_map realiza redimensionamento automático da tabela interna para evitar colisões excessivas. Isso envolve a criação de uma nova tabela maior e a realocação dos elementos existentes para as novas posições.
++ Redimensionamento: À medida que o número de elementos aumenta, o unordered_map realiza redimensionamento automático da tabela interna para evitar colisões excessivas. Isso envolve a criação de uma nova tabela maior e a realocação dos elementos existentes para as novas posições.
 
 ## HEAP | Algorithm
 
