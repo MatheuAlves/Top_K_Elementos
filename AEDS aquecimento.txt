@@ -1,0 +1,16 @@
+AEDS aquecimento:
+
+- individual
+- executar no linux gcc/g++ versão 11 ou superior, mantendo o makefile do michel
+- c ou c++
+
+1 - Crie uma tabela de dispersão (hash) para contar a frequência de cada elemento tokenizado da coleção de dados de entrada. ok
+2 - Crie uma árvore de prioridades (heap) de tamanho k e insira os primeiros k elementos do
+hash nela.
+	1. Para cada elemento restante na hash, compare a contagem com o menor valor do
+	heap.
+	2. Se a contagem for maior do que o menor valor da heap, remova o menor valor, insira
+	o novo elemento e refaça a estrutura.
+	3. Caso contrário, ignore o elemento e vá para o próximo.
+3 - No final, a heap conterá os k elementos com maiores valores (frequências) da coleção
+de dados. Então, imprima-os em ordem crescente.
